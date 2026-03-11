@@ -101,6 +101,7 @@ p {
     text-align: center;
     line-height: 1.8;
     max-width: 800px;
+    font-size: 1.5rem;
 }
 
 .penulis {
@@ -359,4 +360,5 @@ form label {
     width: 70px;
     z-index: 1500;        
 }
+
 
