@@ -341,4 +341,21 @@ body {
 form label {
     color: #060503;
     font-family: 'Cormorant Garamond';
+
+}
+
+.gambar-tengah {
+    width: 80%;       
+    max-width: 200px; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.ikon-kecil {
+    position: fixed;      
+    top: 20px;            
+    right: 10px;          
+    width: 70px;
+    z-index: 1500;        
 }
