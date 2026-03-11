@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni | Toko Buku Safina</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+ <header class="hero-header">
+    <img src="images/gambar-header.jpeg" alt="Banner Toko Buku" class="hero-image">
+</header>
+
+<img src="images/logo-safina.png" alt="Watermark" class="watermark-logo">
+
+ <nav class="sticky-nav"> 
+        <a href="index.html">Beranda</a>
+        <a href="produk.html">Produk</a>
+        <a href="bedah-buku.html">Bedah Buku</a>
+        <a href="testimoni.html">Testimoni</a>
+        <a href="tampil-testimoni.html">Testimoni Pembeli</a>
+        <a href="event.html">Event & Diskon</a>
+        <a href="kontak.html">Alamat Toko & Kontak</a>
+    </nav>
+<h1>Berikan Testimoni Anda</h1>
+<main class="formulir">
+    
+    <form id="formtestimoni">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required placeholder="Nama lengkap anda">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="email@example.com">
+
+        <label for="profesi">Profesi/Jabatan:</label>
+        <input type="text" id="profesi" name="profesi" required placeholder="Profesi atau Jabatan anda">
+
+        <label for="rating">Star Rating (1-5):</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" placeholder="Nilai buku yang anda baca">
+
+        <label for="pesan">Testimoni Anda:</label>
+        <textarea id="pesan" name="pesan" rows="5" required placeholder="Tulis pengalaman Anda tentang buku kami..."></textarea>
+        
+        <button type="submit">Kirim Pengalaman Saya</button>
+    </form>
+</main>
+
+    <footer>
+        <p>&copy; 2026 Toko Buku Safina</p>
+    </footer>
+
+    <script>
+       document.getElementById('formtestimoni').addEventListener('submit', function(e) {
+    e.preventDefault(); 
+
+    // Ambil data (Nama variabel tidak boleh ada spasi atau /)
+    const nama = document.getElementById('nama').value;
+    const email = document.getElementById('email').value;
+    const profesi = document.getElementById('profesi').value; // ID tetap pakai yang di HTML
+    const rating = document.getElementById('rating').value; // ID harus sesuai dengan atribut id di HTML
+    const pesan = document.getElementById('pesan').value;
+
+    // Membuat objek testimoni (Gunakan nama variabel yang sudah diperbaiki)
+    // Di file testimoni.html
+const dataBaru = {
+    nama: nama,
+    email: email,
+    profesi: profesi, // Pakai nama simple saja
+    rating: rating,   // Pakai nama simple saja
+    pesan: pesan
+};
+
+   // Simpan data
+const testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
+testimoniList.push(dataBaru);
+localStorage.setItem('testimoniList', JSON.stringify(testimoniList));
+
+// Beri feedback visual tanpa memblokir layar
+const tombolKirim = document.querySelector('button[type="submit"]');
+tombolKirim.innerText = "Mengirim...";
+tombolKirim.disabled = true; // Mencegah klik ganda
+
+// Tunggu 1.5 detik agar terlihat lebih natural sebelum pindah halaman
+setTimeout(() => {
+    window.location.href = 'proses-testimoni.html';
+}, 1500);
+});
+
+        </script>

@@ -1,0 +1,344 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    
+  
+    background-image: url('images/parchment-texture.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    padding-top: 50px;
+    background-color: #F3F4F4;
+    color: #333;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    border: 8px solid #0b0527;
+  border-image: linear-gradient(to bottom right, #04153a 0%, #0a123f 100%) 1;
+    border-image-slice: 1;
+    box-shadow: inset 0 0 10px rgba(55, 167, 212, 0.2);
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.hero-header {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.watermark-logo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: #F3F4F4;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 2px solid #D4AF37;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sticky-nav a {
+    text-decoration: none;
+    color: #1A3263;
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.sticky-nav a:hover,
+nav a:hover {
+    color: #FE7F2D;
+    border-bottom: 2px solid #FE7F2D;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: #1A3263;
+    background: rgba(252, 252, 251, 0.466);
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-family: 'Lora', serif;
+    text-align: center;
+    line-height: 1.8;
+    max-width: 800px;
+}
+
+.penulis {
+    color: #3498db;
+    font-style: italic;
+}
+
+.daftar-produk {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    width: 90%;
+    max-width: 1100px;
+}
+
+.produk {
+    background-color: #fff;
+    border: 1px solid #e3dccb;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.produk:hover {
+    transform: translateY(-10px);
+}
+
+.produk img {
+    width: 140px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.harga {
+    font-weight: bold;
+    color: #27ae60;
+    font-size: 1.1rem;
+}
+
+.artikel {
+    background-color: #ffffff;
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.artikel h1 {
+    text-align: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.artikel p {
+    text-align: left;
+}
+
+.artikel .sampul {
+    float: right;
+    width: 180px;
+    margin-left: 20px;
+    border: 4px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.artikel blockquote {
+    font-style: italic;
+    padding: 20px;
+    border-left: 5px solid #D4AF37;
+    background-color: #f9f9f9;
+    margin: 20px 0;
+}
+
+.berikantestimoni {
+    font-family: 'Cormorant Garamond';
+    font-size: 1.5rem;
+    color: #1A3263;
+    background: rgba(52, 152, 219, 0.3);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.formulir {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: lora;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: lora;
+}
+
+button[type="submit"] {
+    background-color: #1A3263;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    font-family: lora;
+}
+
+button[type="submit"]:hover {
+    background-color: #FE7F2D;
+    box-shadow: 0 5px 15px rgba(254, 127, 45, 0.4);
+}
+
+#hapussemua {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    font-family: lora;
+}
+
+#hapussemua:hover {
+    background-color: #c0392b;
+}
+
+.btn-kembali {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: #1A3263;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-kembali:hover {
+    background-color: #FE7F2D;
+    box-shadow: 0 5px 15px rgba(254, 127, 45, 0.4);
+}
+
+button:disabled {
+    background-color: #bdc3c7 !important;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+body {
+    animation: fadeInAnimation ease 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.deskripsi-utama {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: #000610;
+    background: rgba(240, 243, 245, 0.562);
+    
+    
+    display: block;
+    margin: 0 auto 20px auto;
+    width: fit-content; 
+    max-width: 90%; 
+    
+    padding: 10px 20px; 
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+
+.artikel {
+    background-color: rgba(255, 255, 255, 0.05); 
+    border: 1px solid #3c0909;
+    color: 
+}
+
+.produk h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #D4AF37; 
+}
+
+
+.alamat-box {
+    background: rgba(60, 9, 9, 0.2);
+    border: 1px solid #D4AF37;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    
+}
+
+.formulir {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #D4AF37;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+
+form label {
+    color: #060503;
+    font-family: 'Cormorant Garamond';
+}

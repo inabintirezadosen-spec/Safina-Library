@@ -1,0 +1,83 @@
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Testimoni | Toko Buku Safina</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+     <header class="hero-header">
+    <img src="images/gambar-header.jpeg" alt="Banner Toko Buku" class="hero-image">
+   
+<img src="images/logo-safina.png" alt="Watermark" class="watermark-logo">
+ 
+    </header>
+    <img src="images/logo-safina.png" alt="Watermark" class="watermark-logo">
+  
+    <nav class="sticky-nav"> 
+        <a href="index.html">Beranda</a>
+        <a href="produk.html">Produk</a>
+        <a href="bedah-buku.html">Bedah Buku</a>
+        <a href="testimoni.html">Testimoni</a>
+        <a href="tampil-testimoni.html">Testimoni Pembeli</a>
+        <a href="event.html">Event & Diskon</a>
+        <a href="kontak.html">Alamat Toko & Kontak</a>
+    </nav>
+ <h1>Testimoni Pembeli</h1>
+            
+    <main class="formulir">
+        <section class="testimoni-container">
+           
+            <div id="daftarTestimoni"></div>
+            
+            <div class="aksi-admin">
+                <button id="hapusSemua" class="btn-danger">Hapus Semua Testimoni</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Toko Buku Safina</p>
+    </footer>
+
+    <script>
+    const container = document.getElementById('daftarTestimoni');
+    
+    // Mengambil data dari localStorage
+    const testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
+
+    if (testimoniList.length === 0) {
+        container.innerHTML = '<p>Belum ada testimoni.</p>';
+    } else {
+       testimoniList.forEach((t) => {
+    const el = document.createElement('div');
+    el.className = 'testimoni-box'; 
+    
+    // Menggunakan nama properti yang simple (tanpa bracket notation)
+    el.innerHTML = `
+        <p><strong>Nama:</strong> ${t.nama || 'Anonim'}</p>
+        <p><strong>Email:</strong> ${t.email || '-'}</p>
+        <p><strong>Profesi:</strong> ${t.profesi || '-'}</p>
+        <p><strong>Rating:</strong> ${t.rating || '0'} / 5 ⭐</p>
+        <p><strong>Pesan:</strong> ${t.pesan || '-'}</p>
+        <hr>
+    `;
+    container.appendChild(el);
+});
+    }
+
+    // Event listener untuk hapus semua
+    document.getElementById('hapusSemua').addEventListener("click", function() {
+        const konfirmasi = confirm("Apakah anda yakin ingin menghapus seluruh testimoni?");
+        if (konfirmasi) {
+            localStorage.removeItem("testimoniList");
+            location.reload();
+        }
+    });
+</script>
+
+</body>
+</html>
